@@ -24,14 +24,14 @@ export class LanguageService {
   }
 
   addLanguage(language: Language): Observable<any> {
-    return this._httpClient.post(environment.getApiUrl +'/languages/', language);
+    return this._httpClient.post(environment.getApiUrl +"/languages/", language, { responseType: 'text' });
   }
 
   updateLanguage(language: Language): Observable<any> {
-    return this._httpClient.put(environment.getApiUrl +`/languages/${language.id}`, language);
+    return this._httpClient.put(environment.getApiUrl +"/languages/", language, { responseType: 'text' });
   }
 
   deleteLanguage(id: number) {
-    return this._httpClient.delete(`/languages/${id}`);
+    return this._httpClient.delete(environment.getApiUrl +`/languages/${id}`);
   }
 }
